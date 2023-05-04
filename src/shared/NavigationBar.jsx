@@ -31,6 +31,8 @@ const NavigationBar = () => {
         <li><Link>Logout</Link></li>
       </ul>
     </div>
+
+    <button className="btn btn-primary hover:bg-indigo-800 px-4">Login</button>
   </div>
 </div>
   )

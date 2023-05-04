@@ -1,50 +1,33 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
+import ChefCard from './ChefCard';
+
 
 const Chefs = () => {
+
+    const [chefData, setChefData] = useState([]);
+
+    useEffect(()=>{
+        fetch('http://localhost:5000/')
+        .then(res => res.json())
+        .then(data => setChefData(data))
+    },[])
+
+
   return (
-    <section className='w-11/12 py-8'>
+    <section className='w-11/12 sm:w-3/4 md:w-11/12 py-8 mx-auto'>
     <div className="hero bg-base-100">
     <div className="text-center">
     <h1 className='text-3xl text-indigo-950 font-semibold uppercase'>the masterminds behind our delicious dishes</h1>
     </div>
     </div>
 
-    <div className="btn-group">
+    <div className="container my-12 mx-auto px-4 md:px-12">
+    <div className="flex flex-wrap mx-4">
+       
+       {chefData.map(chef =><ChefCard key={chef.id} data={chef}></ChefCard>)}
 
-            <div className="card card-compact w-96 bg-base-100 shadow-xl">
-        <figure><img src="/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg" alt="Shoes" /></figure>
-        <div className="card-body">
-            <h2 className="card-title">Shoes!</h2>
-            <p>If a dog chews shoes whose shoes does he choose?</p>
-            <div className="card-actions justify-end">
-            <button className="btn btn-primary">Buy Now</button>
-            </div>
-        </div>
-        </div>
-
-            <div className="card card-compact w-96 bg-base-100 shadow-xl">
-        <figure><img src="/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg" alt="Shoes" /></figure>
-        <div className="card-body">
-            <h2 className="card-title">Shoes!</h2>
-            <p>If a dog chews shoes whose shoes does he choose?</p>
-            <div className="card-actions justify-end">
-            <button className="btn btn-primary">Buy Now</button>
-            </div>
-        </div>
-        </div>
-
-            <div className="card card-compact w-96 bg-base-100 shadow-xl">
-        <figure><img src="/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg" alt="Shoes" /></figure>
-        <div className="card-body">
-            <h2 className="card-title">Shoes!</h2>
-            <p>If a dog chews shoes whose shoes does he choose?</p>
-            <div className="card-actions justify-end">
-            <button className="btn btn-primary">Buy Now</button>
-            </div>
-        </div>
-        </div>
-
-    </div>
+       </div>
+       </div>
     </section>
   )
 }

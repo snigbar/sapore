@@ -12,7 +12,7 @@ const Header = () => {
 
             <div className='flex flex-row gap-2 md:gap-4 justify-center md:justify-start'>
             <button className="btn btn-warning text-white bg-amber-500 hover:bg-amber-400 drop-shadow-xl">Get Started</button>
-            <button className="btn btn-primary bg-indigo-950 px-4 drop-shadow-xl">Subscribe Us</button>
+            <button className="btn btn-primary hover:bg-indigo-950 px-4 drop-shadow-xl">Subscribe Us</button>
             </div>
 
             </div>

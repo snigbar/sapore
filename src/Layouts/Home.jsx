@@ -5,6 +5,8 @@ import Chefs from '../components/Chefs'
 import Footer from '../shared/Footer'
 
 const Home = () => {
+
+
   return (
     <>
     <NavigationBar></NavigationBar>
