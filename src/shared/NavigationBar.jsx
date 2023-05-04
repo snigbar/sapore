@@ -22,7 +22,7 @@ const NavigationBar = () => {
           <img src="https://cdn.drawception.com/images/avatars/647493-B9E.png" />
         </div>
       </label>
-      <ul tabIndex={0} className="mt-3 p-2 shadow menu menu-compact dropdown-content bg-base-100 rounded-box w-52">
+      <ul tabIndex={0} className="mt-3 p-2 drop-shadow-xl menu menu-compact dropdown-content bg-base-100 rounded-box w-52">
         <li>
           <a className="justify-between">
             Profile
