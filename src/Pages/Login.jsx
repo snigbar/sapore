@@ -52,10 +52,10 @@ const Login = () => {
             </div>
             <div>
                 <label className="label">
-                    <span className="text-base label-text" name="password">Password</span>
+                    <span className="text-base label-text">Password</span>
                 </label>
                 <input type="password" placeholder="Enter Password"
-                    className="w-full input input-bordered" required/>
+                    className="w-full input input-bordered" name="password" required/>
             </div>
             
             <div>

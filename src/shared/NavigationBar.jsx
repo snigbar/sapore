@@ -1,7 +1,10 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { Link } from 'react-router-dom'
+import { AuthContext } from '../Providers/AuthProvider';
 
 const NavigationBar = () => {
+
+  const { user,logOut} = useContext(AuthContext);
   return (
     <div className="navbar bg-base-100 px-3 py-4 md:py-4 md:px-4 md:w-10/12 mx-auto">
   <div className="flex-1">
@@ -32,7 +35,7 @@ const NavigationBar = () => {
       </ul>
     </div>
 
-    <button className="btn btn-primary hover:bg-indigo-800 px-4">Login</button>
+   {user?<button className="btn btn-danger px-4" onClick={()=>logOut()}>Logout</button>:<Link to='/login'><button className="btn btn-primary hover:bg-indigo-800 px-4">Login</button></Link>} 
   </div>
 </div>
   )
