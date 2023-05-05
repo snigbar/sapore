@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, NavLink } from 'react-router-dom'
 import { AuthContext } from '../Providers/AuthProvider';
 
 const NavigationBar = () => {
@@ -16,8 +16,9 @@ const NavigationBar = () => {
     
     <div className="flex-none">
     <ul className="menu menu-horizontal gap-8 px-1 text-lg text-slate-700 font-medium">
-      <Link to="/">Home</Link>
-      <Link to='/'>Blog</Link>
+      <NavLink to="/">Home</NavLink>
+      <NavLink to="/blog">Blog</NavLink>
+ 
     </ul>
     </div>
    
