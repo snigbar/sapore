@@ -16,7 +16,7 @@ const Blog = () => {
       </div>
     <div class="w-full md:w-3/5 mx-auto p-5 bg-white rounded-lg shadow">
 
-
+{/* question  */}
 
   <div class="flex flex-col justify-between"  ref={ref}>
     <div class="w-2/3">
@@ -64,7 +64,7 @@ const Blog = () => {
     </div>
 
 
-
+{/* question  */}
 
   <div class="mt-8 space-y-8">
     <div>
@@ -103,7 +103,7 @@ const Blog = () => {
 
 
 
-
+{/* question  */}
   <div class="mt-8 space-y-8">
     <div>
       <div class="flex items-start text-xl">
@@ -141,7 +141,7 @@ const Blog = () => {
     </div>
 
 
-
+{/* question  */}
   <div class="mt-8 space-y-8">
     <div>
       <div class="flex items-start text-xl">

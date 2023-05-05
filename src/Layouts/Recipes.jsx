@@ -11,6 +11,7 @@ const Recipes = () => {
     
   return (
     <section className='w-11/12 sm:w-3/4 md:w-11/12 py-8 mx-auto'>
+        {/* chef profile  */}
         <ChefProfile data={chefData}></ChefProfile>
     </section>
   )

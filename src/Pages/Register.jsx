@@ -6,9 +6,10 @@ const Register = () => {
 
     const {setUser,createUser,updateUser} = useContext(AuthContext);
     const navigate = useNavigate();
-        
+    // error
     const [error, setError] = useState(false);
 
+    // creating user
     const handleRegister = event => {
    
 
@@ -28,6 +29,7 @@ const Register = () => {
 
         createUser(email,password)
         .then((res) =>{
+            // adding image and name
             updateUser(name,photo);
             form.reset();
             setUser(res.user);
@@ -47,7 +49,7 @@ const Register = () => {
             <h1 className="text-3xl font-semibold text-center text-purple-700">Please register</h1>
 
            
-            
+            {/* login form */}
             <form className="space-y-4" onSubmit={handleRegister}>
                 <div>
                     <label className="label">

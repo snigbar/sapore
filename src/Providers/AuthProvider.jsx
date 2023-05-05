@@ -15,17 +15,19 @@ const AuthProvider = ({children}) => {
     const [loading, setLoading] = useState(true);
     
    
-
+// create user
     const createUser = (email,password) =>{
         setLoading(true)
         return createUserWithEmailAndPassword(auth,email,password);
     }
 
+    // create login
     const logIn = (email,password) =>{
         setLoading(true)
         return signInWithEmailAndPassword(auth,email,password);
     }
 
+    // profle pic and name
     const updateUser = (name,photoUrl) =>{
 
             updateProfile(auth.currentUser, {
@@ -41,7 +43,7 @@ const AuthProvider = ({children}) => {
             });
     }
 
-
+// monitoring user
 
     useEffect(()=>{
         const unsubscribe = onAuthStateChanged(auth, loggedUser => {
@@ -58,6 +60,7 @@ const AuthProvider = ({children}) => {
         return signOut(auth);
     }
 
+    // exporting
     const authInfo = {
         user,
         createUser,

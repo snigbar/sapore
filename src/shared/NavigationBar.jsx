@@ -10,7 +10,7 @@ const NavigationBar = () => {
   return (
     <div className="navbar bg-base-100 px-3 py-4 md:py-4 md:px-4 md:w-10/12 mx-auto">
   <div className="flex-1">
-    <a className="font-mono font-semibold text-slate-700 normal-case text-3xl tracking-wide">SAPORE<span className='text-4xl font-extrabold text-amber-500 spacing tracking-tighter'>.</span></a>
+    <a className="font-mono font-semibold text-slate-700 normal-case text-3xl md:text-5xl tracking-wide">SAPORE<span className='text-4xl font-extrabold text-amber-500 spacing tracking-tighter'>.</span></a>
   </div>
   <div className="flex gap-4 md:gap-8">
     
@@ -22,11 +22,11 @@ const NavigationBar = () => {
     </ul>
     </div>
    
-    <div className="dropdown dropdown-end">
+    {user?.displayName &&<div className="dropdown dropdown-end">
     <label tabIndex={0} className="btn btn-ghost btn-circle avatar border-cyan-600">
-    {user?.displayName &&  <div className="w-10 rounded-full">
+     <div className="w-10 rounded-full">
           <img src={user.photoURL} title={`${user.displayName} (reload if image doesn't appear)`}/>
-        </div>}
+        </div>
       </label>
       <ul tabIndex={0} className="mt-3 p-2 drop-shadow-xl menu menu-compact dropdown-content bg-base-100 rounded-box w-52">
         <li>
@@ -36,7 +36,7 @@ const NavigationBar = () => {
         </li>
         <li><Link onClick={()=>logOut()}>Logout</Link></li>
       </ul>
-    </div>
+    </div>}
 
    {user?<button className="btn btn-warning px-4" onClick={()=>logOut()}>Logout</button>:<Link to='/login'><button className="btn btn-primary hover:bg-indigo-800 px-4">Login</button></Link>} 
   </div>

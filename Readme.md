@@ -1,8 +1,13 @@
 # Sapore
 
+# Live link: (https://sapore-8dd43.web.app/)
+
+
 ## This project is created using Tailwind Css and React and DaisyUI
 
 ### Server is build using express js and deployed in vercel
+
+# packages used: react leaflet,react to pdf, lazyloader, react icons,DaisyUi
 
 # Home Page 
 

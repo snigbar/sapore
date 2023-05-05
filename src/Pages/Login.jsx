@@ -5,14 +5,16 @@ import { GithubAuthProvider, GoogleAuthProvider, signInWithPopup } from 'firebas
 
 const Login = () => {
 
-    const { logIn,setUser,auth,setLoading } = useContext(AuthContext);
+    const { logIn,setUser,auth} = useContext(AuthContext);
+    // to navigate
     const navigate = useNavigate();
     const location = useLocation();
 
+    // social sign in
     
 const googleProvider = new GoogleAuthProvider();
 const githubProvider = new GithubAuthProvider();
-  
+//   hadling login
     const handleLogin = event => {
         event.preventDefault();
         const form = event.target;
@@ -33,7 +35,7 @@ const githubProvider = new GithubAuthProvider();
             })
     }
 
-
+// Google login
     const handleGoogleSignIn =() =>{
        
         const from = location.state?.from.pathname || '/'
@@ -45,6 +47,7 @@ const githubProvider = new GithubAuthProvider();
         }).catch(err => console.log(err))
     }
 
+    // github login
     const handleGithubSignIn =() =>{
        
         const from = location.state?.from.pathname || '/'
