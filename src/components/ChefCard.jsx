@@ -39,7 +39,7 @@ const ChefCard = ({data}) => {
            
     </footer>
 
-    <Link to='/home' className='flex justify-center py-4'> <button className="rounded-full py-2 px-4 bg-gradient-to-r from-orange-500 via-red-500 to-pink-500 hover:bg-gradient-to-l text-white font-bold transition duration-500 ease-in-out">View Recipes</button></Link>
+    <Link to={`/recipes/${id}`} className='flex justify-center py-4'> <button className="rounded-full py-2 px-4 bg-gradient-to-r from-orange-500 via-red-500 to-pink-500 hover:bg-gradient-to-l text-white font-bold transition duration-500 ease-in-out">View Recipes</button></Link>
 
 </article>
 
