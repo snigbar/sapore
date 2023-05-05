@@ -4,7 +4,7 @@ import { AuthContext } from '../Providers/AuthProvider';
 
 const Register = () => {
 
-    const {user,createUser,updateUser} = useContext(AuthContext);
+    const {setUser,createUser,updateUser} = useContext(AuthContext);
     const navigate = useNavigate();
         
     const [error, setError] = useState(false);
@@ -27,9 +27,10 @@ const Register = () => {
 
 
         createUser(email,password)
-        .then(() =>{
+        .then((res) =>{
             updateUser(name,photo);
             form.reset();
+            setUser(res.user);
             navigate('/')
 
 

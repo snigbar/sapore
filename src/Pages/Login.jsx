@@ -4,7 +4,7 @@ import { AuthContext } from '../Providers/AuthProvider'
 
 const Login = () => {
 
-    const { logIn } = useContext(AuthContext);
+    const { logIn,setUser } = useContext(AuthContext);
     const navigate = useNavigate();
     const location = useLocation();
   
@@ -19,7 +19,7 @@ const Login = () => {
         logIn(email, password)
             .then(result => {
                 const loggedUser = result.user;
-               
+                setUser(loggedUser)
                 navigate(from, {replace:true});
                 form.reset();
             })

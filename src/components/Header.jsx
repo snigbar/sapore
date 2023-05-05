@@ -3,7 +3,7 @@ import heroImg from "../assets/headerImg.png"
 
 const Header = () => {
   return (
-        <div className="hero min-h-screen bg-base-50 md:w-10/12 mx-auto">
+        <div className="hero min-h-screen bg-base-50 md:w-11/12 mx-auto">
         <div className="hero-content flex-col-reverse md:flex-row-reverse gap-4 text-center md:text-left">
             <img src={heroImg} className="w-7/12 rounded-lg md:ml-4" />
             <div className='w-full lg:w-full'>
@@ -11,8 +11,8 @@ const Header = () => {
             <p className="my-6">Unleash your inner chef with our authentic Italian recipes!</p>
 
             <div className='flex flex-row gap-2 md:gap-4 justify-center md:justify-start'>
-            <button className="btn btn-warning text-white bg-amber-500 hover:bg-amber-400 drop-shadow-xl">Get Started</button>
-            <button className="btn btn-primary hover:bg-indigo-950 px-4 drop-shadow-xl">Subscribe Us</button>
+            <button className="btn btn-warning text-white bg-amber-500 hover:bg-amber-400 px-4 drop-shadow-xl text-lg">Get Started</button>
+            <button className="btn btn-primary hover:bg-indigo-950 px-4 drop-shadow-xl text-lg">Subscribe Us</button>
             </div>
 
             </div>

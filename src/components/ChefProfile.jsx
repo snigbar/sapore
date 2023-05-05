@@ -32,7 +32,7 @@ const ChefProfile = ({data}) => {
     </div>
   </div>
 
-  <section className='w-11/12 sm:w-3/4 md:w-11/12 py-8 mx-auto'>
+  <section className='w-11/12 sm:w-3/4 md:w-11/12 py-8 mt-10 mx-auto' id="recipes">
     {recipes.map((data,idx) => <RecipesCard value={data} key={idx}></RecipesCard>)}
     </section>
    </>
