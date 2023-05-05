@@ -22,7 +22,7 @@ const ChefProfile = ({data}) => {
             <p className="text-xl">
                 <FaUserGraduate className='inline mb-1 me-1 text-red-600'/>{years_of_experience}+years of experience
             </p>
-            <p className="text-xl"><FaHashtag className='inline mb-1 me-1 text-red-600'/>Recipes count {recipes.length}</p>
+            <p className="text-xl"><FaHashtag className='inline mb-1 me-1 text-red-600'/>Recipes count {recipes?.length}</p>
             <p className="text-xl"><FaHeart className='inline mb-1 me-1  text-red-600'/> {likes}</p>
 
            

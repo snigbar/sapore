@@ -7,7 +7,7 @@ const Chefs = () => {
     const [chefData, setChefData] = useState([]);
 
     useEffect(()=>{
-        fetch('http://localhost:5000/')
+        fetch('https://sapore-server-snigbar.vercel.app/')
         .then(res => res.json())
         .then(data => setChefData(data))
     },[])

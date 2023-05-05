@@ -6,11 +6,13 @@ import Register from "../Pages/Register";
 import Recipes from "../Layouts/Recipes";
 import PrivateRoute from "./PrivateRoute";
 import Blog from "../Pages/Blog";
+import ErrorPage from "../Pages/ErrorPage";
 
 const router = createBrowserRouter([
     {
       path: "/",
       element: <Main></Main>,
+      errorElement: <ErrorPage />,
       children:[
         {
           path:'/',
@@ -31,7 +33,7 @@ const router = createBrowserRouter([
         {
           path:"/recipes/:id",
           element:<PrivateRoute><Recipes></Recipes></PrivateRoute>,
-          loader: ({params}) => fetch(`https://sapore-server-snigbar.vercel.app/${params.id}`)
+          loader: ({params}) => fetch(`https://sapore-server-snigbar.vercel.app/recipes/${params.id}`)
       }
       ]
      
