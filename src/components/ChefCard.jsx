@@ -1,6 +1,7 @@
 import React from 'react'
 import { FaHeart,FaUserGraduate,FaHashtag } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
+import LazyLoad from 'react-lazy-load';
 
 
 
@@ -15,9 +16,10 @@ const ChefCard = ({data}) => {
 
     <article className="overflow-hidden rounded-lg shadow-lg">
 
-  
-    <img alt={chef_name} className="block w-full h-64 object-cover object-top" src={picture_url}/>
-   
+    <LazyLoad threshold={0.95} offset={300}>
+        
+    <img alt={chef_name} className="block w-full h-64 object-cover object-top transition-opacity" src={picture_url}/>
+   </LazyLoad>
 
     <header className="flex items-center justify-between leading-tight p-2 md:p-4">
         <h1 className="text-lg">
