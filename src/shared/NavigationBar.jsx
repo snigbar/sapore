@@ -5,6 +5,7 @@ import { AuthContext } from '../Providers/AuthProvider';
 const NavigationBar = () => {
 
   const { user,logOut} = useContext(AuthContext);
+  console.log(user?.photoURL);
   return (
     <div className="navbar bg-base-100 px-3 py-4 md:py-4 md:px-4 md:w-10/12 mx-auto">
   <div className="flex-1">
@@ -19,23 +20,23 @@ const NavigationBar = () => {
     </ul>
     </div>
    
-    <div className="dropdown dropdown-end">
-      <label tabIndex={0} className="btn btn-ghost btn-circle avatar border-cyan-600">
+    {user &&  <div className="dropdown dropdown-end">
+    <label tabIndex={0} className="btn btn-ghost btn-circle avatar border-cyan-600">
         <div className="w-10 rounded-full">
-          <img src="https://cdn.drawception.com/images/avatars/647493-B9E.png" />
+          <img src={user.photoURL}/>
         </div>
       </label>
       <ul tabIndex={0} className="mt-3 p-2 drop-shadow-xl menu menu-compact dropdown-content bg-base-100 rounded-box w-52">
         <li>
           <a className="justify-between">
-            Profile
+            {user.displayName}
           </a>
         </li>
-        <li><Link>Logout</Link></li>
+        <li><Link onClick={()=>logOut()}>Logout</Link></li>
       </ul>
-    </div>
+    </div>}
 
-   {user?<button className="btn btn-danger px-4" onClick={()=>logOut()}>Logout</button>:<Link to='/login'><button className="btn btn-primary hover:bg-indigo-800 px-4">Login</button></Link>} 
+   {user?<button className="btn btn-warning px-4" onClick={()=>logOut()}>Logout</button>:<Link to='/login'><button className="btn btn-primary hover:bg-indigo-800 px-4">Login</button></Link>} 
   </div>
 </div>
   )
