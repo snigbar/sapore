@@ -11,7 +11,7 @@ const RecipesCard = ({value}) => {
     const [favorite, setFavorite] = useState(true);
 
     const notify = () => {
-        toast("the recipe added to your favorite")
+        toast.success("the recipe added to your favorite")
         setFavorite(false)
     };
     
@@ -23,7 +23,7 @@ const RecipesCard = ({value}) => {
     <div className="card-body justify-center h-full">
     <div>
     <h2 className="card-title text-3xl text-center my-4 md:text-5xl md:text-left">{name}</h2>
-    <p className='text-slate-700 text-lg text-center md:text-left'><span className='font-bold'>Ingredients:</span> {ingredients.map(el =><span>{el}, </span>)}</p>
+    <p className='text-slate-700 text-lg text-center md:text-left'><span className='font-bold'>Ingredients:</span> {ingredients.map((el,idx) =><span key={idx}>{el}, </span>)}</p>
     <p className='text-slate-700 text-lg py-5 text-center md:text-left'><span className='font-bold'>Description:</span> {description}</p>
     <p className='text-slate-700 text-lg text-center md:text-left'><span className='font-bold'>How to cook:</span> {cooking_method}</p>
     </div>
@@ -40,7 +40,10 @@ const RecipesCard = ({value}) => {
                 
                 
                 }
-            <ToastContainer />
+            <ToastContainer 
+            closeOnClick
+            autoClose={3000}
+            />
 
       </div>
 

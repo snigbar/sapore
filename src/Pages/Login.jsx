@@ -1,21 +1,54 @@
-import React from 'react'
-import NavigationBar from '../shared/NavigationBar'
-import Footer from '../shared/Footer'
-import { Link } from 'react-router-dom'
+import React, { useContext } from 'react'
+import { Link, useLocation, useNavigate } from 'react-router-dom'
+import { AuthContext } from '../Providers/AuthProvider'
 
 const Login = () => {
+
+    const { logIn } = useContext(AuthContext);
+    const navigate = useNavigate();
+    const location = useLocation();
+  
+    const handleLogin = event => {
+        event.preventDefault();
+        const form = event.target;
+        const email = form.email.value;
+        const password = form.password.value;
+        const from = location.state?.from.pathname || '/'
+      
+
+        logIn(email, password)
+            .then(result => {
+                const loggedUser = result.user;
+               
+                navigate(from, {replace:true});
+                form.reset();
+            })
+            .catch(error => {
+                console.log(error);
+            })
+    }
+
+
+
+
+
+
+
+
+
+
   return (
     <>
 
     <div className="relative flex flex-col items-center justify-center h-screen overflow-hidden">
     <div className="w-full p-6 bg-white border-t-4 border-indigo-600 rounded-md shadow-md border-top lg:max-w-lg">
         <h1 className="text-3xl font-semibold text-center text-gray-700">DaisyUI</h1>
-        <form className="space-y-4">
+        <form onSubmit={handleLogin} className="space-y-4">
             <div>
                 <label className="label">
                     <span className="text-base label-text" name="email">Email</span>
                 </label>
-                <input type="email" placeholder="Email Address" className="w-full input input-bordered" required/>
+                <input type="email" placeholder="Email Address" className="w-full input input-bordered" name="email" required/>
             </div>
             <div>
                 <label className="label">
